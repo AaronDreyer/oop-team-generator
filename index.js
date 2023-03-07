@@ -173,3 +173,26 @@ const addEmployees = () => {
         }
     })
 };
+
+const writeFile = data => {
+    fs.writeFile('./dist/index.html', data, err => {
+        if (err) {
+            console.log(err);
+            return;
+        } else {
+            console.log("Your team profile was successfully created!")
+        }
+    })
+};
+
+addManager()
+  .then(addEmployees)
+  .then(team => {
+    return generateHTML(team);
+  })
+  .then(pageHTML => {
+    return writeFile(pageHTML);
+  })
+  .catch(err => {
+ console.log(err);
+  });
