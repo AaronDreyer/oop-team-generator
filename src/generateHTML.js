@@ -52,6 +52,42 @@ const createInternCard = function (intern) {
     `;
 }
 
+generateHTML = (data) => {
+
+    cards = [];
+
+    for (let i = 0; i < data.length; i++) {
+        const employee = data[i];
+        const role = employee.addRole();
+
+        cards = [];
+
+        if (role === 'Manager') {
+            const managerCard = createManagerCard(employee);
+
+            cards.push(managerCard);
+        }
+
+        if (role === 'Engineer') {
+            const engineerCard = createEngineerCard(employee);
+
+            cards.push(engineerCard);
+        }
+
+        if (role === 'Intern') {
+            const internCard = createInternCard(employee);
+
+            cards.push(internCard);
+        }
+
+    }
+
+    const employeeCards = cards.join('')
+
+    const createTeam = createHTMLPage(employeeCards);
+    return createTeam;
+}
+
 const createHTMLPage = function (employeeCards) {
     return`
     <!DOCTYPE html>
@@ -83,3 +119,5 @@ const createHTMLPage = function (employeeCards) {
         </body>
     `;
 }
+
+module.exports = generateHTML;
