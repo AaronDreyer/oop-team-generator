@@ -26,7 +26,7 @@ const addManager = () => {
         },
         {
             type: 'input',
-            name: 'ID',
+            name: 'id',
             message: "Please enter the Manager's ID.",
             validate: nameInput => {
                 if (Number.isInteger(parseInt(nameInput))) {
@@ -96,7 +96,7 @@ const addEmployees = () => {
         },
         {
             type: 'input',
-            name: 'ID',
+            name: 'id',
             message: "Please enter the employee's ID.",
             validate: nameInput => {
                 if (Number.isInteger(parseInt(nameInput))) {

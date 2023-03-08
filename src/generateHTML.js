@@ -22,12 +22,12 @@ const createEngineerCard = function (engineer) {
         <div class="card shadow-lg border border-dark m-4">
             <div class="card-header text-center">
                 <h2>${engineer.name}</h2>
-                <h3>Engineer</h3><i class="material-icons">content_paste</i>
+                <h3>Engineer</h3><i class="material-icons">laptop_mac</i>
             </div>
             <div class="card-body">
                 <p>ID: ${engineer.id}</p>
                 <p>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                <p>Github Username: ${engineer.github}</p>
+                <p>Github Username: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@ const createInternCard = function (intern) {
         <div class="card shadow-lg border border-dark m-4">
             <div class="card-header text-center">
                 <h2>${intern.name}</h2>
-                <h3>Intern</h3><i class="material-icons">content_paste</i>
+                <h3>Intern</h3><i class="material-icons">assignment_ind</i>
             </div>
             <div class="card-body">
                 <p>ID: ${intern.id}</p>
@@ -54,13 +54,11 @@ const createInternCard = function (intern) {
 
 generateHTML = (data) => {
 
-    cards = [];
+   const cards = [];
 
     for (let i = 0; i < data.length; i++) {
         const employee = data[i];
         const role = employee.addRole();
-
-        cards = [];
 
         if (role === 'Manager') {
             const managerCard = createManagerCard(employee);
@@ -98,7 +96,7 @@ const createHTMLPage = function (employeeCards) {
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-            <link rel="stylesheet" href="./dist/style.css">
+            <link rel="stylesheet" href="../dist/style.css">
             <title>oop team generator</title>
         </head>
 
