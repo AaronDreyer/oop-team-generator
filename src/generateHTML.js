@@ -1,6 +1,6 @@
 const createManagerCard = function (manager) {
     return `
-    <div class="col-4">
+    <div class="col-lg-4 col-md-6 col-sm-12">
         <div class="card shadow-lg border border-dark m-4">
             <div class="card-header text-center">
                 <h2>${manager.name}</h2>
@@ -18,7 +18,7 @@ const createManagerCard = function (manager) {
 
 const createEngineerCard = function (engineer) {
     return `
-    <div class="col-4">
+    <div class="col-lg-4 col-md-6 col-sm-12">
         <div class="card shadow-lg border border-dark m-4">
             <div class="card-header text-center">
                 <h2>${engineer.name}</h2>
@@ -36,7 +36,7 @@ const createEngineerCard = function (engineer) {
 
 const createInternCard = function (intern) {
     return `
-    <div class="col-4">
+    <div class="col-lg-4 col-md-6 col-sm-12">
         <div class="card shadow-lg border border-dark m-4">
             <div class="card-header text-center">
                 <h2>${intern.name}</h2>
@@ -101,18 +101,17 @@ const createHTMLPage = function (employeeCards) {
         </head>
 
         <body>
-            <header class="row">
-                <div class="col-12" id="header">
-                    <h1 id="title" class="p-4 align-middle text-center">Team</h1>
+            <header class="container-fluid">
+                <div class="row">
+                    <div class="col-12" id="header">
+                        <h1 id="title" class="p-4 align-middle text-center">Team</h1>
+                    </div>
                 </div>
             </header>
-        <main>
-            <div class="container">
-                <div class="row justify-body-center mt-4">
+        <main class="container">
+                <div class="row justify-content-center mt-4">
                 ${employeeCards}
                 </div>
-            </div>
-
         </main>
         </body>
     `;

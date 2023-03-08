@@ -16,7 +16,7 @@ const addManager = () => {
             name: 'name',
             message: 'Who is the Manager for this team?',
             validate: nameInput => {
-                if (nameInput) {
+                if (/^[a-zA-Z]+$/.test(nameInput)) {
                     return true;
                 } else {
                     console.log("Please enter the Manager's name!")
@@ -86,7 +86,7 @@ const addEmployees = () => {
             name: 'name',
             message: 'What is the name of this employee?',
             validate: nameInput => {
-                if (nameInput) {
+                if (/^[a-zA-Z]+$/.test(nameInput)) {
                     return true;
                 } else {
                     console.log("Please enter the employee's name!")
@@ -140,7 +140,7 @@ const addEmployees = () => {
             message: "Please enter the employee's school name.",
             when: (input) => input.role === "Intern",
             validate: nameInput => {
-                if (nameInput) {
+                if (/^[a-zA-Z]+$/.test(nameInput)) {
                     return true;
                 } else {
                     console.log("Please enter the Intern's school name!")
