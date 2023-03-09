@@ -156,7 +156,7 @@ const addEmployees = () => {
             message: "Please enter the employee's school name.",
             when: (input) => input.role === "Intern",
             validate: nameInput => {
-                if (/^[a-zA-Z]+$/.test(nameInput)) {
+                if (nameInput) {
                     return true;
                 } else {
                     console.log("Please enter the Intern's school name!")
