@@ -1,3 +1,5 @@
+// Manager Card HTML
+// Function inputs fields with terminal responses
 const createManagerCard = function (manager) {
     return `
     <div class="col-lg-4 col-md-6 col-sm-12">
@@ -16,6 +18,7 @@ const createManagerCard = function (manager) {
     `;
 }
 
+// Engineer Card HTML
 const createEngineerCard = function (engineer) {
     return `
     <div class="col-lg-4 col-md-6 col-sm-12">
@@ -34,6 +37,7 @@ const createEngineerCard = function (engineer) {
     `;
 }
 
+// Intern Card HTML
 const createInternCard = function (intern) {
     return `
     <div class="col-lg-4 col-md-6 col-sm-12">
@@ -52,14 +56,18 @@ const createInternCard = function (intern) {
     `;
 }
 
+// Function to add individual cards with inputs to cards array and add to main HTML structure
 generateHTML = (data) => {
 
+    // Cards Array
    const cards = [];
 
+    //Evaluating length of data (based on amount of roles added)
     for (let i = 0; i < data.length; i++) {
         const employee = data[i];
         const role = employee.addRole();
 
+        // If statements evaluating which roles are created and adding to respective card
         if (role === 'Manager') {
             const managerCard = createManagerCard(employee);
 
@@ -82,10 +90,12 @@ generateHTML = (data) => {
 
     const employeeCards = cards.join('')
 
+    // Creates HTML page based on cards
     const createTeam = createHTMLPage(employeeCards);
     return createTeam;
 }
 
+// Main HTML Structure that cards are added to
 const createHTMLPage = function (employeeCards) {
     return`
     <!DOCTYPE html>
